@@ -78,9 +78,10 @@ class _DiceRollerScreenState extends State<DiceRollerScreen> {
                     flex: 2,
                     child: Text(
                       useTwoDices ? 'Play with 2 dices' : 'Play with 1 dice',
-                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
+                      style:
+                          Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
                     ),
                   ),
                   Expanded(
@@ -93,7 +94,8 @@ class _DiceRollerScreenState extends State<DiceRollerScreen> {
                         });
                       },
                       activeColor: Theme.of(context).colorScheme.primary,
-                      activeTrackColor: Theme.of(context).colorScheme.primaryContainer,
+                      activeTrackColor:
+                          Theme.of(context).colorScheme.primaryContainer,
                     ),
                   ),
                 ],
@@ -104,17 +106,28 @@ class _DiceRollerScreenState extends State<DiceRollerScreen> {
                 children: [
                   if (useTwoDices)
                     Expanded(
-                      child: Image.asset(
-                        _getDiceImagePath(dice2),
-                        width: 100,
-                        height: 100,
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        color: Colors.brown,
+                        child: Image.asset(
+                          _getDiceImagePath(dice2),
+                          width: 100,
+                          height: 100,
+                        ),
                       ),
                     ),
                   Expanded(
-                    child: Image.asset(
-                      _getDiceImagePath(dice1),
-                      width: 100,
-                      height: 100,
+                    child: Card(
+                      elevation: 4,
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        color: Colors.brown,
+                        child: Image.asset(
+                          _getDiceImagePath(dice1),
+                          width: 100,
+                          height: 100,
+                        ),
+                      ),
                     ),
                   ),
                 ],
